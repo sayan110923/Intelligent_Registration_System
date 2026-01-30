@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Registration System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>User Registration Form</h1>
+                <p>Create your account to get started</p>
+            </div>
+
+            <!-- Error Messages Container -->
+            <div id="globalError" class="alert alert-error" style="display: none;">
+                <span id="errorMessage"></span>
+            </div>
+
+            <!-- Success Messages Container -->
+            <div id="globalSuccess" class="alert alert-success" style="display: none;">
+                <span id="successMessage"></span>
+            </div>
+
+            <form id="registrationForm" name="registrationForm" novalidate>
+                <!-- Row 1: First Name & Last Name -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName" 
+                            placeholder="Enter your first name"
+                            required
+                        >
+                        <span class="error-text" id="firstNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName" 
+                            placeholder="Enter your last name"
+                            required
+                        >
+                        <span class="error-text" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Email & Phone -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                        <span class="error-text" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Enter your phone number"
+                            required
+                        >
+                        <span class="error-text" id="phoneError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 3: Age & Gender -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input 
+                            type="number" 
+                            id="age" 
+                            name="age" 
+                            placeholder="Enter your age"
+                            min="18"
+                            max="120"
+                        >
+                        <span class="error-text" id="ageError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="gender" value="Male" required>
+                                <span>Male</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="gender" value="Female" required>
+                                <span>Female</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="gender" value="Other" required>
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <span class="error-text" id="genderError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 4: Address -->
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="address">Address</label>
+                        <input 
+                            type="text" 
+                            id="address" 
+                            name="address" 
+                            placeholder="Enter your street address"
+                        >
+                        <span class="error-text" id="addressError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 5: Country, State, City -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="USA">United States</option>
+                            <option value="Canada">Canada</option>
+                            <option value="India">India</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                        <span class="error-text" id="countryError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province <span class="required">*</span></label>
+                        <select id="state" name="state" required disabled>
+                            <option value="">Select State</option>
+                        </select>
+                        <span class="error-text" id="stateError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <select id="city" name="city" required disabled>
+                            <option value="">Select City</option>
+                        </select>
+                        <span class="error-text" id="cityError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 6: Password & Confirm Password -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Create a strong password"
+                                required
+                            >
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter" id="strengthMeter"></div>
+                            <span class="strength-text" id="strengthText">Strength: Weak</span>
+                        </div>
+                        <span class="error-text" id="passwordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password"
+                                required
+                            >
+                        </div>
+                        <span class="error-text" id="confirmPasswordError"></span>
+                    </div>
+                </div>
+
+                <!-- Row 7: Terms & Conditions -->
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label class="checkbox-label checkbox-large">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the <a href="#" class="link">Terms & Conditions</a> <span class="required">*</span></span>
+                        </label>
+                        <span class="error-text" id="termsError"></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-row">
+                    <button 
+                        type="submit" 
+                        id="submitBtn" 
+                        class="btn btn-primary" 
+                        disabled
+                    >
+                        Register
+                    </button>
+                    <button 
+                        type="reset" 
+                        class="btn btn-secondary"
+                    >
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/form-validation.js"></script>
+    <script src="js/password-strength.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>

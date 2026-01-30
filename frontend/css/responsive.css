@@ -1,0 +1,299 @@
+@media (max-width: 768px) {
+    .form-wrapper {
+        padding: 30px;
+        border-radius: 14px;
+    }
+
+    .form-header {
+        margin-bottom: 32px;
+    }
+
+    .form-header h1 {
+        font-size: 1.8em;
+    }
+
+    .form-header p {
+        font-size: 1em;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+    .form-row:last-child {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 13px 24px;
+        font-size: 0.9em;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .checkbox-label {
+        padding: 8px 0;
+    }
+
+    .alert {
+        padding: 14px 16px;
+        font-size: 0.95em;
+    }
+
+    .password-wrapper input {
+        padding-right: 45px;
+    }
+
+    .toggle-password {
+        right: 12px;
+        font-size: 1.1em;
+        padding: 6px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .form-wrapper {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .form-wrapper::before {
+        height: 3px;
+    }
+
+    .form-header {
+        margin-bottom: 24px;
+    }
+
+    .form-header h1 {
+        font-size: 1.5em;
+        margin-bottom: 8px;
+    }
+
+    .form-header p {
+        font-size: 0.95em;
+    }
+
+    .form-row {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-row:last-child {
+        margin-top: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group input[type="password"],
+    .form-group select {
+        padding: 12px 14px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .error-text {
+        font-size: 0.8em;
+        margin-top: 6px;
+    }
+
+    .alert {
+        padding: 12px 14px;
+        font-size: 0.9em;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .alert::before {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9em;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+        transform: translateY(-2px);
+    }
+
+    .strength-text {
+        font-size: 0.8em;
+    }
+
+    .strength-meter {
+        height: 6px;
+        margin-bottom: 6px;
+    }
+
+    .password-wrapper input {
+        padding-right: 42px;
+    }
+
+    .toggle-password {
+        right: 10px;
+        font-size: 1.1em;
+        padding: 6px;
+    }
+
+    .checkbox-group {
+        gap: 12px;
+    }
+
+    .checkbox-label input[type="radio"],
+    .checkbox-label input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+
+    .link {
+        word-break: break-word;
+    }
+}
+
+    .checkbox-label {
+        font-size: 0.9em;
+    }
+
+
+
+@media (min-width: 1200px) {
+    .form-wrapper {
+        padding: 50px;
+    }
+
+    .form-row {
+        gap: 25px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group input[type="password"],
+    .form-group select {
+        padding: 14px;
+    }
+}
+
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .form-header {
+        margin-bottom: 15px;
+    }
+
+    .form-header h1 {
+        font-size: 1.3em;
+    }
+
+    .form-row {
+        margin-bottom: 10px;
+        gap: 15px;
+    }
+
+    .form-group label {
+        margin-bottom: 4px;
+    }
+}
+
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .form-wrapper {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .alert {
+        display: none;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+
+    .form-wrapper {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    .form-header h1,
+    .form-group label {
+        color: #e0e0e0;
+    }
+
+    .form-header p {
+        color: #a0a0a0;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group input[type="password"],
+    .form-group select {
+        background-color: #3d3d3d;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        background-color: #4d4d4d;
+        border-color: #667eea;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

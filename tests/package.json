@@ -1,0 +1,27 @@
+{
+  "name": "registration-system-tests",
+  "version": "1.0.0",
+  "description": "Automated tests for Intelligent Registration System using Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:negative": "playwright test negative-scenario",
+    "test:positive": "playwright test positive-scenario",
+    "test:logic": "playwright test form-logic"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "registration",
+    "e2e"
+  ],
+  "author": "QA Team",
+  "license": "MIT"
+}
