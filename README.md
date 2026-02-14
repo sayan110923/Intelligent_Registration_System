@@ -375,79 +375,6 @@ npx playwright test
 npx playwright show-report
 ```
 
-### Test Output
-
-Each test provides:
-```
-✅ Test passed
-❌ Test failed with error details
-📸 Screenshots captured in tests/screenshots/
-🎥 Videos recorded (if configured)
-📊 HTML report generated
-```
-
-### Captured Artifacts
-
-**Screenshots:**
-- `error-state.png` - Form showing validation errors
-- `success-state.png` - Form after successful submission
-
-**Videos:** (if enabled)
-- Recorded browser session for each test
-- Useful for debugging failed tests
-
-**HTML Report:**
-```bash
-npx playwright show-report
-```
-Opens interactive report showing:
-- Test results
-- Execution timeline
-- Screenshots
-- Error details
-
-## Key JavaScript Functions
-
-### Form Validation (form-validation.js)
-
-```javascript
-// Main validation functions
-Validator.validateFirstName(value)
-Validator.validateLastName(value)
-Validator.validateEmail(value)
-Validator.validatePhone(value, countryCode)
-Validator.validateGender()
-Validator.validateCountry(value)
-Validator.validateState(value)
-Validator.validateCity(value)
-Validator.validatePassword(value)
-Validator.validateConfirmPassword(value, password)
-Validator.validateTerms()
-
-// Helper functions
-showError(fieldId, message)      // Display error
-clearError(fieldId)              // Clear error
-markFieldValid(fieldId)          // Mark as valid
-validateField(fieldName)         // Validate single field
-validateForm()                   // Live validation
-validateFormFull()               // Full validation on submit
-submitForm()                     // Submit handler
-```
-
-### Form Handler (form-handler.js)
-
-```javascript
-// Dropdown data
-locationData = {
-    'USA': { ... },
-    'Canada': { ... },
-    ...
-}
-
-// Event listeners for country/state/city selects
-// Auto-populate dependent dropdowns
-```
-
 ### Password Strength (password-strength.js)
 
 ```javascript
@@ -464,15 +391,6 @@ calculatePasswordStrength(password)  // Returns 'weak', 'medium', or 'strong'
 .success      /* Success styling */
 
 /* Applied to input fields dynamically */
-```
-
-### Responsive Breakpoints
-
-```css
-/* Mobile: 480px and below */
-/* Tablet: 481px - 768px */
-/* Desktop: 769px+ */
-/* Large: 1200px+ */
 ```
 
 ## API Endpoints (Backend)
@@ -639,22 +557,3 @@ Validator.validateEmail = function(value) {
 - [ ] Form submission history
 - [ ] Admin dashboard
 - [ ] Mobile app version
-
-## License
-
-MIT License - Feel free to use and modify
-
-## Support
-
-For issues or questions:
-1. Check browser console (F12)
-2. Review error messages
-3. Check test logs
-4. Verify all dependencies are installed
-5. Ensure correct file paths
-
----
-
-**Version:** 1.0.0  
-**Last Updated:** January 2026  
-**Author:** Development Team
